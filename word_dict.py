@@ -47,12 +47,22 @@ class preprocessing():
       for i,_ in words_counter:
         word_dict[i] = len(word_dict)
       reversed_dict = dict(zip(word_dict.values(),word_dict.keys()))
-    max_sent_len = 50
-    max_summary_len = 15
-    return(word_dict,reversed_dict,max_sent_len,max_summary_len)
+
+    with open('word_dict.pkl',"wb") as f:
+      pickle.dump(word_dict,f)
+    with open('reversed_dict.pkl',"wb") as f:
+      pickle.dump(reversed_dict,f)  
+    return(word_dict,reversed_dict)
+
 
 #preparing the dataset
 
-  
+  #def dataset(self):
+    
+ #   for 
 
+preprocessing = preprocessing(train_titles,train_articles,valid_titles,valid_articles)
+
+word_dict = preprocessing.get_dictionary("train")
+print(word_dict)
 
