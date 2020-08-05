@@ -82,7 +82,10 @@ class preprocessing():
       return a,b
 
 preprocessing = preprocessing(train_titles,train_articles,valid_titles,valid_articles)
-train_x,train_y = preprocessing.dataset("word_dict.pkl","train")
-print(len(train_x),len(train_y))
-
-
+#train_x,train_y = preprocessing.dataset("word_dict.pkl","train")
+#print(len(train_x),len(train_y))
+#print(train_x[0])
+#finding the length if the dictionary
+with open("word_dict.pkl",'rb') as f:
+  word_dict = pickle.load(f)
+  print(len(word_dict))
